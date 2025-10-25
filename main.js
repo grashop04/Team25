@@ -2,7 +2,6 @@ let character = document.getElementById('character');
 let spike = document.getElementById('spike');
 let seagull = document.getElementById('seagull');
 let gravflip = false;
-let score = 0;
 
 function toggleGrav() {
   gravflip = !gravflip;
@@ -16,9 +15,15 @@ document.addEventListener('keydown', (e) => {
 });
 
 
-let scoreKeeper = setInterval(function(){
-  score += 5
-},200);
+
+
+let score = 0;
+const scoreDisplay = document.getElementById('scoreDisplay');
+
+let scoreKeeper = setInterval(function () {
+  score += 5;
+  scoreDisplay.textContent = "Score: " + score;
+}, 200);
 
 
 let checkDead = setInterval(function(){
