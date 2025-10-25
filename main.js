@@ -62,6 +62,8 @@ function showCustomAlert() {
             const alertBox = document.getElementById('customAlert');
             const alertMessage = document.getElementById('alertMessage');
             const customButton = document.getElementById('customButton');
+            const hideScore=document.getElementById('scoreDisplay');
+            hideScore.style.display='none';
 
             // Set the message and button label
             alertMessage.innerText = message;
@@ -73,6 +75,7 @@ function showCustomAlert() {
             // Handle button click
             customButton.addEventListener('click', function () {
                 alertBox.style.display = 'none'; // Hide the alert box
+                hideScore.style.display='block';
                 resetGame();
             });
         }
