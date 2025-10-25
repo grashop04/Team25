@@ -26,10 +26,8 @@
 } 
 
 @keyframes jump {
-  0%{top: 150px; transform: scaleY(-1);}
-  30%{top: 100px; transform: scaleY(-1);}
-  70%{top: 100px; transform: scaleY(-1);}
-  100%{top: 150px; transform: scaleY(-1);}
+  from {top: 600px; transform: scaleY(-1)}
+  to {top: 0px; transform: scaleY(-1)}
 }
 
 #spike {
