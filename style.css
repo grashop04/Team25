@@ -13,7 +13,10 @@
 #character {
   width: 20px;
   height: 50px;
-  background-color: rgb(109, 2, 170);
+  background-image: url("399-3999503_random-guy-pixel-game-character-png.png"); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
   top: 600px;
 }
