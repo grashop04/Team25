@@ -3,16 +3,7 @@
   margin: 0;
 }
 
-#game {
-  width: 1350px;  
-  height: 650px;
-  background-image: url('media/images/beach.png');
-  background-size: cover; 
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-}
+
 
 #character {
   width: 20px;
@@ -68,4 +59,35 @@
 @keyframes slide {
   0%{left: 480px;}
   100%{left: -40px;}
+}
+
+.slider {
+  width: 1350px;
+  height: 650px;                
+  position: relative;
+  background-size: cover;
+  animation: slidebg 10s linear infinite;
+  
+}
+
+.slide-track {
+  display: flex;
+  width: calc(200%);     
+  animation: scroll 10s linear infinite;
+}
+
+.slide-track img {
+  width: 1350px;
+  height: 650px;           
+  flex-shrink: 0;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
