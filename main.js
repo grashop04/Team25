@@ -40,7 +40,7 @@ const startGen3= spikeGen2();
 
 function seagullGen() {
   return setInterval(() => {
-    const count = 3 + Math.floor(Math.random() * 5); 
+    const count = 1 + Math.floor(Math.random() * 5); 
     for (let i = 0; i < count; i++) {
       const sea = document.createElement('div');
       sea.className = 'seagull';
