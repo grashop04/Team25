@@ -4,10 +4,14 @@
 }
 
 #game {
-  width: 1350px;
+  width: 1350px;  
   height: 650px;
-  border: 1px solid black;
+  background-image: url('media/images/beach.png');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
+  overflow: hidden;
 }
 
 #character {
