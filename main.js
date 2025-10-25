@@ -9,7 +9,11 @@ const jump = function() {
   }, 1000);
 }
 
-document.addEventListener('click', jump);
+document.addEventListener('keydown', (e) =>{ 
+    if(e.key === " ") {
+        jump();
+    }
+});
 
 let checkDead = setInterval(function(){
   // console.log(window.getComputedStyle(c haracter).getPropertyValue('top'));
