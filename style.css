@@ -26,18 +26,34 @@
 } 
 
 @keyframes jump {
-  0%{top: 150px;}
-  30%{top: 100px;}
-  70%{top: 100px;}
-  100%{top: 150px;}
+  0%{top: 150px; transform: scaleY(-1);}
+  30%{top: 100px; transform: scaleY(-1);}
+  70%{top: 100px; transform: scaleY(-1);}
+  100%{top: 150px; transform: scaleY(-1);}
 }
 
-#block {
+#spike {
   width: 20px;
   height: 20px;
-  background-color: rgb(5, 128, 1);
+  background-image: url("media/images/spike.png"); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
   bottom: 0px;
+  left: 480px;
+  animation: slide 2s infinite;
+}
+
+#seagull {
+  width: 20px;
+  height: 20px;
+  background-image: url("media/images/seagull.png"); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 750px;
   left: 480px;
   animation: slide 2s infinite;
 }
