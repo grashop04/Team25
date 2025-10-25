@@ -1,5 +1,6 @@
 let character = document.getElementById('character');
-let block = document.getElementById('block');
+let spike = document.getElementById('spike');
+let seagull = document.getElementById('seagull');
 const jump = function() {
   if(character.classList !== 'animate'){
     character.classList.add('animate');
@@ -18,10 +19,16 @@ document.addEventListener('keydown', (e) =>{
 let checkDead = setInterval(function(){
   // console.log(window.getComputedStyle(c haracter).getPropertyValue('top'));
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
-  let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'));
-  if(blockLeft<20 && blockLeft > 0 && characterTop >= 130){
-    block.style.animation = 'none';
-    block.style.display = 'none';
-    alert('Game Over');
-  }
+  let spikeLeft = parseInt(window.getComputedStyle(spike).getPropertyValue('left'));
+  let seagullLeft = parseInt(window.getComputedStyle(seagull).getPropertyValue('left'));
+  if (
+  (spikeLeft < 20 && spikeLeft > 0 && characterTop >= 130) ||
+  (seagullLeft < 20 && seagullLeft > 0 && characterTop >= 130)
+) {
+  spike.style.animation = 'none';
+  spike.style.display = 'none';
+  seagull.style.animation = 'none';
+  seagull.style.display = 'none';
+  alert('Game Over');
+}
 }, 10);
