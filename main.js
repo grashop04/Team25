@@ -27,7 +27,7 @@ function resetGame() {
 }
  
 function showCustomAlert() {
-            const message = "Game Over";
+            const message = "You died, you earned " +score+"score";
             const buttonText = "Restart Game";
             const alertBox = document.getElementById('customAlert');
             const alertMessage = document.getElementById('alertMessage');

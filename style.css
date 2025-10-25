@@ -102,11 +102,15 @@
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #f8d7da;
-            color: #721c24;
+            background-color: #fafafa;
+            color: #000000;
             padding: 10px;
             border: 1px solid #f5c6cb;
             border-radius: 5px;
             text-align: center;
             z-index: 3;
+}
+
+#customButton{
+  background-color:rgb(255, 0, 0);
 }
