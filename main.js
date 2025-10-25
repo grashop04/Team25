@@ -14,9 +14,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-
-
-
 let score = 0;
 const scoreDisplay = document.getElementById('scoreDisplay');
 
@@ -25,6 +22,30 @@ let scoreKeeper = setInterval(function () {
   scoreDisplay.textContent = "Score: " + score;
 }, 200);
 
+function resetGame() {
+      setTimeout(() => location.reload(), 50);
+}
+ 
+function showCustomAlert() {
+            const message = "Game Over";
+            const buttonText = "Restart Game";
+            const alertBox = document.getElementById('customAlert');
+            const alertMessage = document.getElementById('alertMessage');
+            const customButton = document.getElementById('customButton');
+
+            // Set the message and button label
+            alertMessage.innerText = message;
+            customButton.innerText = buttonText;
+
+            // Show the custom alert box
+            alertBox.style.display = 'block';
+
+            // Handle button click
+            customButton.addEventListener('click', function () {
+                alertBox.style.display = 'none'; // Hide the alert box
+                resetGame();
+            });
+        }
 
 let checkDead = setInterval(function(){
   // console.log(window.getComputedStyle(c haracter).getPropertyValue('top'));
@@ -44,6 +65,7 @@ let checkDead = setInterval(function(){
   spike.style.display = 'none';
   seagull.style.animation = 'none';
   seagull.style.display = 'none';
-  alert(' You died, you earned '+score+' score');
+  //alert(' You died, you earned '+score+' score');
+  showCustomAlert()
 }
 }, 10);
