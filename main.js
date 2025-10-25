@@ -1,6 +1,7 @@
 let character = document.getElementById('character');
 let gravflip = false;
 let score = 0;
+const scoreDisplay = document.getElementById('scoreDisplay');
 const game = document.getElementById('game');
 
 
@@ -46,11 +47,30 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+function resetGame() {
+      setTimeout(() => location.reload(), 50);
+}
+ 
+function showCustomAlert() {
+            const message = "You died, you earned " +score+"score";
+            const buttonText = "Restart Game";
+            const alertBox = document.getElementById('customAlert');
+            const alertMessage = document.getElementById('alertMessage');
+            const customButton = document.getElementById('customButton');
 
-let scoreKeeper = setInterval(function(){
-  score += 5
-},200);
+            // Set the message and button label
+            alertMessage.innerText = message;
+            customButton.innerText = buttonText;
 
+            // Show the custom alert box
+            alertBox.style.display = 'block';
+
+            // Handle button click
+            customButton.addEventListener('click', function () {
+                alertBox.style.display = 'none'; // Hide the alert box
+                resetGame();
+            });
+        }
 
 //let checkDead = setInterval(
 //}, 10);

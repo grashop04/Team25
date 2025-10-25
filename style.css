@@ -34,9 +34,15 @@
   z-index: 2;
 }
 
+<<<<<<< HEAD
 .seagull {
   width: 30px;
   height: 30px;
+=======
+#seagull {
+  width: 40px;
+  height: 40px;
+>>>>>>> ccf3aed102ddf8b43e89a241ca5d1f07c2ccdaaa
   background-image: url("media/images/seagull.png"); 
   background-size: cover; 
   background-repeat: no-repeat;
@@ -48,6 +54,19 @@
   z-index: 2;
 }
 
+#scoreDisplay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: black;        
+  font-size: 24px;
+  font-weight: bold;
+  background: rgba(255,255,255,0.6);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+
 @keyframes slide {
   0%{left: 1500px;}
   100%{left: -40px;}
@@ -55,7 +74,7 @@
 
 .slider {
   width: 2048px;
-  height: 665px;                
+  height: 610px;                
   position: relative;
   background-size: cover;
   animation: slidebg 5s linear infinite;
@@ -69,8 +88,9 @@
 }
 
 .slide-track img {
+  z-index:1;
   width: 2048px;
-  height: 665px;           
+  height: 610px;           
   flex-shrink: 0;
 }
 
@@ -82,4 +102,23 @@
   100% {
     transform: translateX(-50%);
   }
+}
+
+.custom-alert {
+            display: none;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fafafa;
+            color: #000000;
+            padding: 10px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            text-align: center;
+            z-index: 3;
+}
+
+#customButton{
+  background-color:rgb(255, 0, 0);
 }
