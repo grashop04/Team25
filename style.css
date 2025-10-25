@@ -30,7 +30,7 @@
   position: absolute;
   bottom: 0px;
   left: 480px;
-  animation: slide 2s infinite;
+  animation: slide 10s linear infinite;
 }
 
 #seagull {
@@ -43,11 +43,11 @@
   position: absolute;
   bottom: 300px;
   left: 480px;
-  animation: slide 4s infinite;
+  animation: slide 5s linear infinite;
 }
 
 @keyframes slide {
-  0%{left: 480px;}
+  0%{left: 1240px;}
   100%{left: -40px;}
 }
 
