@@ -52,9 +52,22 @@
   animation: slide 2s infinite;
 }
 
-#seagull {
+#spikeUp {
   width: 20px;
   height: 20px;
+  background-image: url("media/images/spike.png"); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 600px;
+  left: 480px;
+  animation: slide 2s infinite;
+}
+
+#seagull {
+  width: 10px;
+  height: 10px;
   background-image: url("media/images/seagull.png"); 
   background-size: cover; 
   background-repeat: no-repeat;
