@@ -22,7 +22,7 @@ let checkDead = setInterval(function(){
   let seagullLeft = parseInt(window.getComputedStyle(seagull).getPropertyValue('left'));
   if (
   (spikeLeft < 20 && spikeLeft > 0 && characterTop >= 580) ||
-  (seagullLeft < 20 && seagullLeft > 0 && ((characterTop <= 350 && characterTop >= 330) || (characterBot <=300 && characterBot >= 280)))
+  (seagullLeft < 20 && seagullLeft > 0 && ((characterTop <= 320 && characterTop >= 300) || (characterBot <=320 && characterBot >= 300)))
 ) {
   spike.style.animation = 'none';
   spike.style.display = 'none';
