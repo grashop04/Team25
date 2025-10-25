@@ -12,7 +12,7 @@
   background-position: center;
   position: absolute;
   bottom: 0px;
-  transition: bottom 3s;
+  transition: bottom 2.5s;
 }
 
 #character.gravflip {
@@ -30,7 +30,7 @@
   position: absolute;
   bottom: 0px;
   left: 480px;
-  animation: slide 3s linear infinite;
+  animation: slide 2s linear infinite;
 }
 
 #seagull {
@@ -43,11 +43,11 @@
   position: absolute;
   bottom: 300px;
   left: 480px;
-  animation: slide 5s linear infinite;
+  animation: slide 4s linear infinite;
 }
 
 @keyframes slide {
-  0%{left: 1240px;}
+  0%{left: 1500px;}
   100%{left: -40px;}
 }
 
