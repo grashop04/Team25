@@ -7,11 +7,13 @@ const game = document.getElementById('game');
 
 function spikeGen() {
   return setInterval(() => {
-    const count = 1 + Math.floor(Math.random() * 5); 
+    const count = 3 + Math.floor(Math.random() * 5); 
     for (let i = 0; i < count; i++) {
       const spi = document.createElement('div');
       spi.className = 'spike';
-      spi.style.animationDelay = (Math.random() * 1.2) + 's';
+      spi.style.animationDelay = (Math.random() * 3) + 's';
+      const randomHeight = 10 + Math.random() * 200;
+      spi.style.height = randomHeight + 'px';
       game.appendChild(spi);
       spi.addEventListener('animationiteration', () => spi.remove(), { once: true });
     }
@@ -22,13 +24,13 @@ const startGen = spikeGen();
 
 function seagullGen() {
   return setInterval(() => {
-    const count = 1 + Math.floor(Math.random() * 5); 
+    const count = 3 + Math.floor(Math.random() * 5); 
     for (let i = 0; i < count; i++) {
       const sea = document.createElement('div');
       sea.className = 'seagull';
-      sea.style.animationDelay = (Math.random() * 1.2) + 's';
-      const randomHeight = 150 + Math.random() * 350;
-      sea.style.bottom = randomHeight + 'px';
+      sea.style.animationDelay = (Math.random() * 3) + 's';
+      const randomBot = 150 + Math.random() * 400;
+      sea.style.bottom = randomBot + 'px';
       game.appendChild(sea);
       sea.addEventListener('animationiteration', () => sea.remove(), { once: true });
     }
