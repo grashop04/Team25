@@ -47,6 +47,11 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+let scoreKeeper = setInterval(function () {
+  score += 5;
+  scoreDisplay.textContent = "Score: " + score;
+}, 200);
+
 function resetGame() {
       setTimeout(() => location.reload(), 50);
 }
@@ -72,10 +77,60 @@ function showCustomAlert() {
             });
         }
 
-let scoreKeeper = setInterval(function() {
-      score += 5;
-      scoreDisplay.textContent = "Score: " + score;
-    }, 200);
 
-//let checkDead = setInterval(
-//}, 10);
+let gameOver = false;
+
+const HOTBOX_SHRINK = 6;
+
+function rectHotbox(el) {
+  const r = el.getBoundingClientRect();
+  return {
+    left:   r.left   + HOTBOX_SHRINK,
+    right:  r.right  - HOTBOX_SHRINK,
+    top:    r.top    + HOTBOX_SHRINK,
+    bottom: r.bottom - HOTBOX_SHRINK
+  };
+}
+
+function overlaps(a, b) {
+  return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+}
+
+function pause() {
+  character.style.animationPlayState = 'paused';
+  document.querySelectorAll('.spike, .seagull').forEach(el => {
+    el.style.animationPlayState = 'paused';
+  });
+}
+
+function die() {
+  if (gameOver) return;
+  gameOver = true;
+
+  clearInterval(startGen);
+  clearInterval(startGen2);
+  pause();
+  showCustomAlert();
+}
+
+setInterval(function() {
+  if (gameOver) return;
+
+  const charBox = rectHotbox(character);
+
+  const spikes = document.querySelectorAll('.spike');
+  for (const s of spikes) {
+    if (overlaps(charBox, rectHotbox(s))) {
+      die();
+      return;
+    }
+  }
+
+  const seagulls = document.querySelectorAll('.seagull');
+  for (const g of seagulls) {
+    if (overlaps(charBox, rectHotbox(g))) {
+      die();
+      return;
+    }
+  }
+}, 20)
