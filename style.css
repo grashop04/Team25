@@ -3,8 +3,6 @@
   margin: 0;
 }
 
-
-
 #character {
   width: 30px;
   height: 75px;
@@ -13,22 +11,14 @@
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: 600px;
-  transition: top 3s;
+  bottom: 0px;
+  transition: bottom 3s;
 }
 
 #character.gravflip {
-  top: 0px; transform: scaleY(-1)
+  bottom: 600px; transform: scaleY(-1)
 }
 
-.animate{
-  animation: jump 1s;
-} 
-
-@keyframes jump {
-  from {top: 600px; transform: scaleY(-1)}
-  to {top: 0px; transform: scaleY(-1)}
-}
 
 #spike {
   width: 40px;
@@ -40,7 +30,11 @@
   position: absolute;
   bottom: 0px;
   left: 480px;
+<<<<<<< HEAD
   animation: slide 2s linear infinite;
+=======
+  animation: slide 10s linear infinite;
+>>>>>>> e0ab553e02ae28a4b754481e1aab2cdafa8aa08b
 }
 
 #seagull {
@@ -53,11 +47,15 @@
   position: absolute;
   bottom: 300px;
   left: 480px;
+<<<<<<< HEAD
   animation: slide 4s linear infinite;
+=======
+  animation: slide 5s linear infinite;
+>>>>>>> e0ab553e02ae28a4b754481e1aab2cdafa8aa08b
 }
 
 @keyframes slide {
-  0%{left: 480px;}
+  0%{left: 1240px;}
   100%{left: -40px;}
 }
 
