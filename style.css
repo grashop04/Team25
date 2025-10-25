@@ -67,6 +67,7 @@
 }
 
 .slide-track img {
+  z-index:1;
   width: 2048px;
   height: 665px;           
   flex-shrink: 0;
@@ -80,4 +81,19 @@
   100% {
     transform: translateX(-50%);
   }
+}
+
+.custom-alert {
+            display: none;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            text-align: center;
+            z-index: 3;
 }
