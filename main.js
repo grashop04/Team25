@@ -72,5 +72,10 @@ function showCustomAlert() {
             });
         }
 
+let scoreKeeper = setInterval(function() {
+      score += 5;
+      scoreDisplay.textContent = "Score: " + score;
+    }, 200);
+
 //let checkDead = setInterval(
 //}, 10);
