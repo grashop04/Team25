@@ -34,15 +34,11 @@
   z-index: 2;
 }
 
-<<<<<<< HEAD
+
 .seagull {
-  width: 30px;
-  height: 30px;
-=======
-#seagull {
   width: 40px;
   height: 40px;
->>>>>>> ccf3aed102ddf8b43e89a241ca5d1f07c2ccdaaa
+
   background-image: url("media/images/seagull.png"); 
   background-size: cover; 
   background-repeat: no-repeat;
