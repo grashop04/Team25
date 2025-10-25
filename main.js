@@ -22,11 +22,13 @@ function spikeGen() {
 
 function spikeGen2() {
   return setInterval(() => {
-    const count = 1 + Math.floor(Math.random() * 5); 
+    const count = 3 + Math.floor(Math.random() * 5); 
     for (let i = 0; i < count; i++) {
       const spi = document.createElement('div');
       spi.className = 'spike2';
-      spi.style.animationDelay = (Math.random() * 1.2) + 's';
+      spi.style.animationDelay = (Math.random() * 3) + 's';
+      const randomHeight = 10 + Math.random() * 200;
+      spi.style.height = randomHeight + 'px';
       game.appendChild(spi);
       spi.addEventListener('animationiteration', () => spi.remove(), { once: true });
     }
