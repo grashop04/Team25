@@ -4,7 +4,6 @@ let seagull = document.getElementById('seagull');
 let gravflip = false;
 let score = 0;
 
-
 function toggleGrav() {
   gravflip = !gravflip;
   character.classList.toggle('gravflip', gravflip);
@@ -37,6 +36,6 @@ let checkDead = setInterval(function(){
   spike.style.display = 'none';
   seagull.style.animation = 'none';
   seagull.style.display = 'none';
-  alert(score);
+  alert(' You died, you earned '+score+' score');
 }
 }, 10);
