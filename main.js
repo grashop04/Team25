@@ -27,6 +27,8 @@ function seagullGen() {
       const sea = document.createElement('div');
       sea.className = 'seagull';
       sea.style.animationDelay = (Math.random() * 1.2) + 's';
+      const randomHeight = 150 + Math.random() * 350;
+      sea.style.bottom = randomHeight + 'px';
       game.appendChild(sea);
       sea.addEventListener('animationiteration', () => sea.remove(), { once: true });
     }
