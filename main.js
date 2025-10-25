@@ -2,6 +2,8 @@ let character = document.getElementById('character');
 let spike = document.getElementById('spike');
 let seagull = document.getElementById('seagull');
 let gravflip = false;
+let score = 0;
+const scoreDisplay = document.getElementById('scoreDisplay');
 
 function toggleGrav() {
   gravflip = !gravflip;
@@ -13,14 +15,6 @@ document.addEventListener('keydown', (e) => {
     toggleGrav();
   }
 });
-
-let score = 0;
-const scoreDisplay = document.getElementById('scoreDisplay');
-
-let scoreKeeper = setInterval(function () {
-  score += 5;
-  scoreDisplay.textContent = "Score: " + score;
-}, 200);
 
 function resetGame() {
       setTimeout(() => location.reload(), 50);
@@ -69,3 +63,9 @@ let checkDead = setInterval(function(){
   showCustomAlert()
 }
 }, 10);
+
+let scoreKeeper = setInterval(function () {
+  score += 5;
+  scoreDisplay.textContent = "Score: " + score;
+}, 200);
+
