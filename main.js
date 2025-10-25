@@ -17,11 +17,12 @@ document.addEventListener('keydown', (e) => {
 let checkDead = setInterval(function(){
   // console.log(window.getComputedStyle(c haracter).getPropertyValue('top'));
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
+  let characterBot = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
   let spikeLeft = parseInt(window.getComputedStyle(spike).getPropertyValue('left'));
   let seagullLeft = parseInt(window.getComputedStyle(seagull).getPropertyValue('left'));
   if (
-  (spikeLeft < 20 && spikeLeft > 0 && characterTop >= 20) ||
-  (seagullLeft < 20 && seagullLeft > 0 && (characterTop <= 300 || characterTop >= 320 ))
+  (spikeLeft < 20 && spikeLeft > 0 && characterTop >= 580) ||
+  (seagullLeft < 20 && seagullLeft > 0 && ((characterTop <= 350 && characterTop >= 330) || (characterBot <=300 && characterBot >= 280)))
 ) {
   spike.style.animation = 'none';
   spike.style.display = 'none';
