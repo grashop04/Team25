@@ -23,7 +23,7 @@
   background-position: center;
   position: absolute;
   top: 600px;
-  transition: top 1.5s;;
+  transition: top 3s;
 }
 
 #character.gravflip {
@@ -62,7 +62,7 @@
   position: absolute;
   bottom: 300px;
   left: 480px;
-  animation: slide 2s infinite;
+  animation: slide 4s infinite;
 }
 
 @keyframes slide {

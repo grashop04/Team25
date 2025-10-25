@@ -20,8 +20,8 @@ let checkDead = setInterval(function(){
   let spikeLeft = parseInt(window.getComputedStyle(spike).getPropertyValue('left'));
   let seagullLeft = parseInt(window.getComputedStyle(seagull).getPropertyValue('left'));
   if (
-  (spikeLeft < 20 && spikeLeft > 0 && characterTop >= 130) ||
-  (seagullLeft < 20 && seagullLeft > 0 && characterTop >= 130)
+  (spikeLeft < 20 && spikeLeft > 0 && characterTop >= 20) ||
+  (seagullLeft < 20 && seagullLeft > 0 && (characterTop <= 300 || characterTop >= 320 ))
 ) {
   spike.style.animation = 'none';
   spike.style.display = 'none';
