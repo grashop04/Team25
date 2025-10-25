@@ -26,11 +26,11 @@
 } 
 
 @keyframes jump {
-  0%{top: 150px;}
-  30%{top: 100px;}
-  70%{top: 100px;}
-  100%{top: 150px;}
+  from {top: 600px;}
+  to {top: 0px;}
 }
+
+
 
 #block {
   width: 20px;
