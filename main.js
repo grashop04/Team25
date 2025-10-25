@@ -26,12 +26,13 @@ let checkDead = setInterval(function(){
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
   let characterBot = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
   let spikeLeft = parseInt(window.getComputedStyle(spike).getPropertyValue('left'));
+  let spikeTop = parseInt(window.getComputedStyle(spike).getPropertyValue('top'));
   let seagullLeft = parseInt(window.getComputedStyle(seagull).getPropertyValue('left'));
   let seagullTop = parseInt(window.getComputedStyle(seagull).getPropertyValue('top'));
   let seagullBot = parseInt(window.getComputedStyle(seagull).getPropertyValue('bottom'));
 
   if (
-  (spikeLeft < 20 && spikeLeft > 0 && characterTop >= 580) ||
+  (spikeLeft < 20 && spikeLeft > 0 && characterBot >= spikeTop) ||
   (seagullLeft < 20 && seagullLeft > 0 && ((characterTop <= seagullTop && characterTop >= seagullBot) || (characterBot <=seagullTop && characterBot >= seagullBot)))
 ) {
   spike.style.animation = 'none';
