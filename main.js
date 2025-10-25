@@ -21,14 +21,14 @@ let checkDead = setInterval(function(){
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
   let spikeLeft = parseInt(window.getComputedStyle(spike).getPropertyValue('left'));
   let seagullLeft = parseInt(window.getComputedStyle(seagull).getPropertyValue('left'));
-  if(spikeLeft<20 && spikeLeft > 0 && characterTop >= 130){
-    spike.style.animation = 'none';
-    spike.style.display = 'none';
-    alert('Game Over');
-  }
-  if(seagullLeft<20 && seagullLeft > 0 && characterTop >= 130){
-    seagull.style.animation = 'none';
-    seagull.style.display = 'none';
-    alert('Game Over');
-  }
+  if (
+  (spikeLeft < 20 && spikeLeft > 0 && characterTop >= 130) ||
+  (seagullLeft < 20 && seagullLeft > 0 && characterTop >= 130)
+) {
+  spike.style.animation = 'none';
+  spike.style.display = 'none';
+  seagull.style.animation = 'none';
+  seagull.style.display = 'none';
+  alert('Game Over');
+}
 }, 10);
