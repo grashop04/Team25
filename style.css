@@ -23,6 +23,11 @@
   background-position: center;
   position: absolute;
   top: 600px;
+  transition: top 1.5s;;
+}
+
+#character.gravflip {
+  top: 0px; transform: scaleY(-1)
 }
 
 .animate{

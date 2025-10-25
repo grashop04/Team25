@@ -1,19 +1,17 @@
 let character = document.getElementById('character');
 let spike = document.getElementById('spike');
 let seagull = document.getElementById('seagull');
-const jump = function() {
-  if(character.classList !== 'animate'){
-    character.classList.add('animate');
-  }
-  setTimeout(function(){
-    character.classList.remove('animate');
-  }, 1000);
+let Gravflip = false;
+
+function toggleGrav() {
+  Gravflip = !Gravflip;
+  character.classList.toggle('gravflip', Gravflip);
 }
 
-document.addEventListener('keydown', (e) =>{ 
-    if(e.key === " ") {
-        jump();
-    }
+document.addEventListener('keydown', (e) => {
+  if (e.key === " ") {
+    toggleGrav();
+  }
 });
 
 let checkDead = setInterval(function(){
