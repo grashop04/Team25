@@ -34,8 +34,8 @@
 }
 
 #seagull {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-image: url("media/images/seagull.png"); 
   background-size: cover; 
   background-repeat: no-repeat;
