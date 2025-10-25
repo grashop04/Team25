@@ -49,6 +49,11 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+let scoreKeeper = setInterval(function () {
+  score += 5;
+  scoreDisplay.textContent = "Score: " + score;
+}, 200);
+
 function resetGame() {
       setTimeout(() => location.reload(), 50);
 }
