@@ -4,8 +4,8 @@
 }
 
 #game {
-  width: 1000px;
-  height: 400px;
+  width: 1350px;
+  height: 650px;
   border: 1px solid black;
   position: relative;
 }
@@ -13,12 +13,12 @@
 #character {
   width: 20px;
   height: 50px;
-  background-image: url("media/images/399-3999503_random-guy-pixel-game-character-png.png"); 
+  background-image: url("media/images/avatar.png"); 
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: 350px;
+  top: 600px;
 }
 
 .animate{
