@@ -18,7 +18,21 @@ function spikeGen() {
   }, 4000);
 }
 
+function spikeGen2() {
+  return setInterval(() => {
+    const count = 1 + Math.floor(Math.random() * 5); 
+    for (let i = 0; i < count; i++) {
+      const spi = document.createElement('div');
+      spi.className = 'spike2';
+      spi.style.animationDelay = (Math.random() * 1.2) + 's';
+      game.appendChild(spi);
+      spi.addEventListener('animationiteration', () => spi.remove(), { once: true });
+    }
+  }, 4000);
+}
+
 const startGen = spikeGen();
+const startGen3= spikeGen2();
 
 function seagullGen() {
   return setInterval(() => {
@@ -36,7 +50,6 @@ function seagullGen() {
 }
 
 const startGen2 = seagullGen();
-
 
 function toggleGrav() {
   gravflip = !gravflip;
@@ -103,7 +116,7 @@ function overlaps(a, b) {
 
 function pause() {
   character.style.animationPlayState = 'paused';
-  document.querySelectorAll('.spike, .seagull').forEach(el => {
+  document.querySelectorAll('.spike, .seagull, .spike2').forEach(el => {
     el.style.animationPlayState = 'paused';
   });
 }
@@ -111,9 +124,9 @@ function pause() {
 function die() {
   if (gameOver) return;
   gameOver = true;
-
   clearInterval(startGen);
   clearInterval(startGen2);
+  clearInterval(startGen3);
   pause();
   showCustomAlert();
 }
@@ -134,6 +147,14 @@ setInterval(function() {
   const seagulls = document.querySelectorAll('.seagull');
   for (const g of seagulls) {
     if (overlaps(charBox, rectHotbox(g))) {
+      die();
+      return;
+    }
+  }
+
+  const spikes2 = document.querySelectorAll('.spike2');
+  for (const t of spikes2) {
+    if (overlaps(charBox, rectHotbox(t))) {
       die();
       return;
     }

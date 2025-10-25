@@ -35,11 +35,27 @@
   z-index: 2;
 }
 
+.spike2 {
+  width: 40px;
+  height: 40px;
+  background-image: url("media/images/spike.png"); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 600px;
+  left: 480px;
+  animation: slide 4s linear infinite;
+  animation-fill-mode: backwards;
+  z-index: 2;
+  transform: scaleY(-1);
+}
+
+
 
 .seagull {
   width: 40px;
   height: 40px;
-
   background-image: url("media/images/seagull.png"); 
   background-size: cover; 
   background-repeat: no-repeat;
