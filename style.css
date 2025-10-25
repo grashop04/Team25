@@ -20,7 +20,7 @@
 }
 
 
-#spike {
+.spike {
   width: 40px;
   height: 40px;
   background-image: url("media/images/spike.png"); 
@@ -30,10 +30,11 @@
   position: absolute;
   bottom: 0px;
   left: 480px;
-  animation: slide 2s linear infinite;
+  animation: slide 4s linear infinite;
+  z-index: 2;
 }
 
-#seagull {
+.seagull {
   width: 30px;
   height: 30px;
   background-image: url("media/images/seagull.png"); 
@@ -44,6 +45,7 @@
   bottom: 300px;
   left: 480px;
   animation: slide 4s linear infinite;
+  z-index: 2;
 }
 
 @keyframes slide {

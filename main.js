@@ -1,8 +1,39 @@
 let character = document.getElementById('character');
-let spike = document.getElementById('spike');
-let seagull = document.getElementById('seagull');
 let gravflip = false;
 let score = 0;
+const game = document.getElementById('game');
+
+
+function spikeGen() {
+  return setInterval(() => {
+    const count = 1 + Math.floor(Math.random() * 5); 
+    for (let i = 0; i < count; i++) {
+      const spi = document.createElement('div');
+      spi.className = 'spike';
+      spi.style.animationDelay = (Math.random() * 1.2) + 's';
+      game.appendChild(spi);
+      spi.addEventListener('animationiteration', () => spi.remove(), { once: true });
+    }
+  }, 4000);
+}
+
+const startGen = spikeGen();
+
+function seagullGen() {
+  return setInterval(() => {
+    const count = 1 + Math.floor(Math.random() * 5); 
+    for (let i = 0; i < count; i++) {
+      const sea = document.createElement('div');
+      sea.className = 'seagull';
+      sea.style.animationDelay = (Math.random() * 1.2) + 's';
+      game.appendChild(sea);
+      sea.addEventListener('animationiteration', () => sea.remove(), { once: true });
+    }
+  }, 4000);
+}
+
+const startGen2 = seagullGen();
+
 
 function toggleGrav() {
   gravflip = !gravflip;
@@ -21,24 +52,5 @@ let scoreKeeper = setInterval(function(){
 },200);
 
 
-let checkDead = setInterval(function(){
-  // console.log(window.getComputedStyle(c haracter).getPropertyValue('top'));
-  let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
-  let characterBot = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
-  let spikeLeft = parseInt(window.getComputedStyle(spike).getPropertyValue('left'));
-  let spikeTop = parseInt(window.getComputedStyle(spike).getPropertyValue('top'));
-  let seagullLeft = parseInt(window.getComputedStyle(seagull).getPropertyValue('left'));
-  let seagullTop = parseInt(window.getComputedStyle(seagull).getPropertyValue('top'));
-  let seagullBot = parseInt(window.getComputedStyle(seagull).getPropertyValue('bottom'));
-
-  if (
-  (spikeLeft < 20 && spikeLeft > 0 && characterBot >= spikeTop) ||
-  (seagullLeft < 20 && seagullLeft > 0 && ((characterTop <= seagullTop && characterTop >= seagullBot) || (characterBot <=seagullTop && characterBot >= seagullBot)))
-) {
-  spike.style.animation = 'none';
-  spike.style.display = 'none';
-  seagull.style.animation = 'none';
-  seagull.style.display = 'none';
-  alert(' You died, you earned '+score+' score');
-}
-}, 10);
+//let checkDead = setInterval(
+//}, 10);
