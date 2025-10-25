@@ -19,6 +19,7 @@ document.addEventListener('keydown', (e) => {
 let checkDead = setInterval(function(){
   // console.log(window.getComputedStyle(c haracter).getPropertyValue('top'));
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
+  let characterBot = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
   let spikeLeft = parseInt(window.getComputedStyle(spike).getPropertyValue('left'));
   let seagullLeft = parseInt(window.getComputedStyle(seagull).getPropertyValue('left'));
   let spikeUPLeft = parseInt(window.getComputedStyle(spikeUP).getPropertyValue('left'));
