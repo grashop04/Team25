@@ -63,7 +63,7 @@
 
 .slider {
   width: 2048px;
-  height: 808px;                
+  height: 665px;                
   position: relative;
   background-size: cover;
   animation: slidebg 10s linear infinite;
@@ -78,7 +78,7 @@
 
 .slide-track img {
   width: 2048px;
-  height: 808px;           
+  height: 665px;           
   flex-shrink: 0;
 }
 
