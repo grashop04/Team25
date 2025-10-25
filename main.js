@@ -1,11 +1,11 @@
 let character = document.getElementById('character');
 let spike = document.getElementById('spike');
 let seagull = document.getElementById('seagull');
-let Gravflip = false;
+let gravflip = false;
 
 function toggleGrav() {
-  Gravflip = !Gravflip;
-  character.classList.toggle('gravflip', Gravflip);
+  gravflip = !gravflip;
+  character.classList.toggle('gravflip', gravflip);
 }
 
 document.addEventListener('keydown', (e) => {
