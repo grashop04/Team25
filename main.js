@@ -5,7 +5,11 @@ const scoreDisplay = document.getElementById('scoreDisplay');
 const game = document.getElementById('game');
 let speed=4;
 const maxspeed=1;
+let baseitems=document.getElementById('baseitems');
 
+setTimeout(() => {
+  baseitems.style.display='none';
+}, 3800);
 
 function spikeGen() {
   return setInterval(() => {
