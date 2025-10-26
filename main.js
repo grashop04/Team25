@@ -3,6 +3,8 @@ let gravflip = false;
 let score = 0;
 const scoreDisplay = document.getElementById('scoreDisplay');
 const game = document.getElementById('game');
+let speed=4;
+const maxspeed=1;
 
 
 function spikeGen() {
@@ -69,6 +71,7 @@ document.addEventListener('keydown', (e) => {
 let scoreKeeper = setInterval(function () {
   score += 5;
   scoreDisplay.textContent = "Score: " + score;
+  speedup();
 }, 200);
 
 function resetGame() {
@@ -76,7 +79,7 @@ function resetGame() {
 }
  
 function showCustomAlert() {
-            const message = "You died, you earned " +score+"score";
+            const message = "You died, you earned " +score+" score";
             const buttonText = "Restart Game";
             const alertBox = document.getElementById('customAlert');
             const alertMessage = document.getElementById('alertMessage');
@@ -124,6 +127,21 @@ function pause() {
     el.style.animationPlayState = 'paused';
   });
 }
+
+function speedup(){
+if(gameOver){
+  return;
+}
+if(speed>maxspeed){
+  if(speed>1.5){
+  speed-=0.005;}
+  else{
+    speed-=0.002
+  }
+  document.documentElement.style.setProperty('--obstacale-speed',speed+'s');
+}
+}
+
 
 function die() {
   if (gameOver) return;
